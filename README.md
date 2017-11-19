@@ -1,15 +1,25 @@
 Group project for our software dev class.
 
-Either download the repository files or use 'git clone https://github.com/MaconHolliman/TallyTracker.git'
+Preferablly fork this github so that when you've made changes, you can do a pull request which compares the two and shows the differences in code, and allows for me to commit it to the main branch, allowing us to test that it works before committing.
+
+
+This boilerplate that we are beginning on is based on the git "https://github.com/angular/angular" go there if you have any issues with getting to start initially as a lot of that is the same still.
 
 Once in the directory of the project, where you can see the folders for client and server, you want to run the following commands.
 
-cd server npm install npm start
+Once in a terminal/cmd etc of the directory of the files, (where the e2e and node_modules and src folders are located) type the following commands 
 
-With that window opening and running, you'll want to open another prompt/commmand line etc and do
+(if you don't have npm, google it. It's a very simple installation.)
 
-cd server npm install gulp
+1) "npm install"
 
-with those two running successfully, you can connect to the website via localhost:4000
+2) "ng serve --open"
 
-You can edit the files in the client folder and when you save the file, it should get auto detected by gulp and auto refresh the website and allow you to view your changes immediately.
+///////////////////////
+
+because of the --open flag it should automatically open the browser windows as it completes installation. 
+
+Refer to the above github link for the angular project to find tips about this projects format and/or how to handle angular. Or pick through the example code, and if I've committed, the code I've been writing, to get a feel for how it's done. 
+
+It's rather simple, just takes a tiny amount of reading.
+
