@@ -3,7 +3,12 @@
 
 .Bodywhole{
     margin: 0;
+    
 }
+
+    .bg{
+        background-color: #41A5A5;
+    }
 
 .cntr{
     min-width: 150px;
@@ -17,3 +22,41 @@ border: 0 solid transparent;
 background: #34373c !important;
 box-shadow: none;
 }
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+ .mulch{
+    border: 1px solid #ccc !important;
+    margin-bottom: 16px !important;
+ }
+
+ .dupip{
+    border: 1px solid #ccc !important;
+    margin-bottom: 16px !important;
+ }
+
+.votedisplay{
+    padding: .78571429em 10em .78571429em !important;
+}
+
+ .margintoggle{
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+ }
+
+ .box{
+    background-color: #34C7C7;
+    padding: 21px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border-radius: 3px;
+ }

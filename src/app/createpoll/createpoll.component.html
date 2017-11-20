@@ -1,3 +1,88 @@
-<p>
-  createpoll works!
-</p>
+
+
+
+<button (click)="show = !show">{{show ? 'Hide Poll' : 'Create Poll'}}</button>
+
+<button (click)="getPolls()">Get polls -> Check console for array</button>
+<button (click)="postPolls()">post poll -> Check console for response</button>
+<button (click)="getPollById()">get poll by id -> Check console for response</button>
+
+
+	  
+<input [(ngModel)]="name" #ctrl="ngModel" required placeholder="input for updating name var">
+
+   <p>Value: {{ name }}</p>
+   <p>Valid: {{ ctrl.valid }}</p>
+   
+   <button (click)="setValue()">Set value</button>
+
+<div class="ui labeled button" tabindex="0">
+    <div class="ui button votedisplay">
+        {{ optOne }}
+      <i class="heart icon"></i>  
+    </div>
+    <a class="ui basic label">
+      # votes 
+    </a>
+  </div>
+
+
+<br>
+<div *ngIf="show">Integrate with a create poll -> loading button -> then return poll</div>
+
+ <div>
+   <form class="cntr box" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate *ngIf="show">
+      
+    
+     
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Enter a Question" ng-model="title" name="question" ngModel required #first="ngModel"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Enter an option" ng-model="optionOne" name="optOne" ngModel required #first="ngModel"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Enter an option" ng-model="optionTwo" name="optTwo" ngModel required #first="ngModel"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Enter an option" ng-model="optionThree" name="optThree" ngModel required #first="ngModel"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Enter an option" ng-model="optionFour" name="optFour" ngModel required #first="ngModel"></textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Enter an option" ng-model="optionFive" name="optFive" ngModel required #first="ngModel"></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Enter an option" ng-model="optionSix" name="optSix" ngModel required #first="ngModel"></textarea>
+              </mat-form-field>
+
+             
+              <div class="ui toggle checkbox dupip">
+                <div >
+                  <input type="checkbox" name="public">
+                  <label >Allow Duplicate IP Votes?</label>
+                </div>
+                </div>
+
+                <div class="ui toggle checkbox mulch">
+                  <div >
+                    <input type="checkbox" name="public">
+                    <label >Allow Multiple Choices?</label>
+                  </div>
+                  </div>
+                
+              
+              
+   
+      
+      
+<button class="ui right labeled icon button" value="Submit" >
+    <i class="right arrow icon"></i>
+    Create Poll
+  </button>
+
+
+    </form>
+
+    </div>
