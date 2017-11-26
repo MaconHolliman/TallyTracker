@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgControlStatus } from '@angular/forms';
+<<<<<<< HEAD
 import { NgForm} from '@angular/forms';
+=======
+import { NgForm s} from '@angular/forms';
+>>>>>>> 4399d5f96e546533cf1d9898e133cfcd36188a9d
 import { NgSemanticModule } from "ng-semantic";
 import { HttpClient } from '@angular/common/http';
 
@@ -15,6 +19,7 @@ export class CreatepollComponent implements OnInit {
   name: string = '';
   results: string;
   body: string;
+<<<<<<< HEAD
   
   model: any = {};
   data = [
@@ -27,6 +32,8 @@ export class CreatepollComponent implements OnInit {
     console.log('Data submitted: ', this.model);
   }
 
+=======
+>>>>>>> 4399d5f96e546533cf1d9898e133cfcd36188a9d
   id: number = 1;
   question: string = '';
   optOne: string = '';

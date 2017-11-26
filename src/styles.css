@@ -30,6 +30,7 @@
     border: 1px solid #ccc !important;
     margin-bottom: 16px !important;
 }
+<<<<<<< HEAD
 
 .box{
     background-color: white;
@@ -47,6 +48,25 @@
     font-size: 15px;
 }
 
+=======
+
+.box{
+    background-color: white;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #BBB;
+}
+
+.question{
+    font-size: 20px;
+}
+
+.option{
+    font-size: 15px;
+}
+
+>>>>>>> 4399d5f96e546533cf1d9898e133cfcd36188a9d
 .site-header{
     text-align: center;
     margin-top: 50px;
