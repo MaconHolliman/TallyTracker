@@ -1,31 +1,25 @@
 
 
 
-<button (click)="show = !show">{{show ? 'Hide Poll' : 'Create Poll'}}</button>
-
-<button (click)="getPolls()">Get polls -> Check console for array</button>
-<button (click)="postPolls()">post poll -> Check console for response</button>
-<button (click)="getPollById()">get poll by id -> Check console for response</button>
 
 
-	  
-<input [(ngModel)]="name" #ctrl="ngModel" required placeholder="input for updating name var">
+<form id="datiRichiesta" (submit)="submit()">
 
-   <p>Value: {{ name }}</p>
-   <p>Valid: {{ ctrl.valid }}</p>
-   
-   <button (click)="setValue()">Set value</button>
-
-<div class="ui labeled button" tabindex="0">
-    <div class="ui button votedisplay">
-        {{ optOne }}
-      <i class="heart icon"></i>  
-    </div>
-    <a class="ui basic label">
-      # votes 
-    </a>
+  
+  <div *ngFor="let d of data">
+      <input type="text" 
+          class="form-control" 
+          placeholder="{{d.placeholder}}" 
+          [(ngModel)]="model[d.modelPropName]"
+          name="{{d.name}}"
+          (focus)="$event.target.placeholder = ''" 
+          (blur)="$event.target.placeholder = d.placeholder"/>
   </div>
+  <button>Submit</button>
+</form>
 
+
+<button (click)="show = !show">{{show ? 'Hide Poll' : 'Create Poll'}}</button>
 
 <br>
 <div *ngIf="show">Integrate with a create poll -> loading button -> then return poll</div>

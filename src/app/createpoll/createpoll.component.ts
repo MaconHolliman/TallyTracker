@@ -17,8 +17,17 @@ export class CreatepollComponent implements OnInit {
   results: string;
   body: string;
   
+  model: any = {};
+  data = [
+    { placeholder: 'First name', name: 'name', modelPropName: 'name'},
+    { placeholder: 'Last name', name: 'lastName', modelPropName: 'lastName'},
+    { placeholder: 'Age', name: 'age', modelPropName: 'age'}
+  ];
 
-  
+  submit() {
+    console.log('Data submitted: ', this.model);
+  }
+
   id: number = 1;
   question: string = '';
   optOne: string = '';
