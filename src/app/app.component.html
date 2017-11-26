@@ -1,50 +1,30 @@
+
+
 <!--The content below is only a placeholder and can be replaced.-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
 <body class="bg">
-  <div class="ui sidebar inverted vertical menu right" >
-    <a class="item">
-      1
-    </a>
-    <a class="item">
-      2
-    </a>
-    <a class="item">
-      3
-    </a>
-  </div>
+  
   <div class="pusher">
 
-  <sm-menu title="Angular2" class="inverted" background="#34373c" logo="http://coderubik.com/images/poll_logo-a353e334.png">
-    <a sm-item *ngFor="let item of items" [icon]="item.icon">{{item?.title}}</a>
+  <header class="site-header">
+    <img src="https://cdn1.iconfinder.com/data/icons/the-data-visualisation-catalogue-set-i/130/tally_chart-512.png"/>
+    <h1>{{title}}</h1>
+  </header>
 
-    <sm-menu class="menu right secondary">
-        <a sm-item href="#/elements/menu" 
-            image="https://cdn.pixabay.com/photo/2016/09/28/02/14/user-1699635_960_720.png">User Name</a>
-        <a sm-item icon="sidebar big" onclick="$('.ui.sidebar').sidebar('toggle');" ></a>
+<!--    CONFUSED ON HOW TO APPLY STYLING, WILL REVISIT
+
+    <sm-menu title="Home" class="inverted" background="#fff" logo="https://cdn1.iconfinder.com/data/icons/the-data-visualisation-catalogue-set-i/130/tally_chart-512.png">
+      <h1 style="margin: 10px;">{{title}}</h1>
     </sm-menu>
-</sm-menu>
-  
-<div style="text-align:center">
-  <h1>
-    {{title}}
-  </h1>
-  <img width="150" alt="TallyTrack Logo" src="http://coderubik.com/images/poll_logo-a353e334.png">
-</div>
 
+-->
+    
+    <app-createpoll></app-createpoll>
 
+  </div>
 
-
-<div style="text-align:center" class="cntr">
-
-  <app-createpoll>
- 
-  </app-createpoll>
-
-
-
-</div>
-
-
-
-
-</div>
 </body>
