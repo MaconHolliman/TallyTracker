@@ -1,25 +1,58 @@
+  
+
+  
+  
   <div>
     <form style="margin: auto; margin-top: 50px;" class="cntr box" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
     
     <mat-form-field class="example-full-width question">
-      <textarea matInput placeholder="Enter your question"></textarea>
+      <textarea matInput placeholder="Enter your question" name="Question" ngModel="{{question}}"></textarea>
     </mat-form-field>
 
+    
+    <div *ngFor="let d of data">
     <mat-form-field class="example-full-width option">
-      <input matInput placeholder="option one">
+      <input matInput placeholder="{{d.placeholder}}" name="{{d.name}}" ngModel="{{d.val}}">
     </mat-form-field>
+  </div>
 
-    <mat-form-field class="example-full-width option">
-      <input matInput placeholder="option two">
-    </mat-form-field>
+  <div class="Center-options">
+  <br>
+
+  <div class="ui vertical animated button Center-options" style="display:grid;" (click)="addOption()">
+    <div class="visible content">Add Opt?</div>
+    <div class="hidden content">
+      <i class="plus icon"></i>
+    </div>
+  </div>
 
 
+<br>
 
+  <button  type="button" class="ui button Center-options">
+    IP Duplication Checking?
+    <i matTooltip="This feature guards against a user submitting multiple votes if enabled." matTooltipPosition="after" style="float: right;" class="info circle icon"></i>
+  </button>
+<br>
+  <div class="ui buttons Center-options" >
+    <button  type="button" class="ui button" (click)="setSingleIP(false)">Ignore</button>
+    <div class="or"></div>
+    <button  type="button" class="ui positive button" (click)="setSingleIP(true)">Enforce</button>
+  </div>
+  <br>
+ 
 
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Enter an option" ng-model="optionThree" name="optThree" ngModel  #first="ngModel"></textarea>
-    </mat-form-field>  
-
+  <button  type="button" class="ui button Center-options" style="margin-top:15px;" (click)="nothing()">
+    Allow Multiple Choices?
+    <i matTooltip="This feature allows for a user to select multiple choices when they submit their vote." matTooltipPosition="after" style="float: right;" class="info circle icon"></i>
+  </button>
+<br>
+  <div class="ui buttons Center-options" >
+    <button  type="button" class="ui button" (click)="setMultipleChoices(false)">Deny</button>
+    <div class="or"></div>
+    <button   type="button"class="ui positive button" (click)="setMultipleChoices(true)">Allow</button>
+  </div>
+  <br>
 
        
 <!--  HIDDEN WHILE UNTIL READY FOR IMPLEMENTATION
@@ -39,12 +72,12 @@
     </div>
                 
 -->    
-<button class="ui right labeled icon button" value="Submit" >
+<button class="ui right labeled icon button Center-options" style="display:grid;margin-top:15px;" value="Submit" >
   <i class="right arrow icon"></i>
   Create Poll
 </button>
 
-
+</div>
 
     </form>
   </div>
