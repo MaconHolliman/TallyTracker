@@ -1,9 +1,5 @@
-  
-
-  
-  
   <div>
-    <form style="margin: auto; margin-top: 50px;" class="cntr box" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <form style="margin: auto; margin-top: 30px; margin-bottom: 30px;" class="cntr box" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
     
     <mat-form-field class="example-full-width question">
       <input matInput placeholder="Enter your question" name="Question" ngModel="{{question}}">
@@ -24,60 +20,56 @@
     <div class="hidden content">
       <i class="plus icon"></i>
     </div>
-  </div>
 
+    <div class="Center-options">
 
-<br>
+      <br>
 
-  <button  type="button" class="ui button Center-options">
-    IP Duplication Checking?
-    <i matTooltip="This feature guards against a user submitting multiple votes if enabled." matTooltipPosition="after" style="float: right;" class="info circle icon"></i>
-  </button>
-<br>
-  <div class="ui buttons Center-options" >
-    <button  type="button" class="ui button" (click)="setSingleIP(false)">Ignore</button>
-    <div class="or"></div>
-    <button  type="button" class="ui positive button" (click)="setSingleIP(true)">Enforce</button>
-  </div>
-  <br>
- 
-
-  <button  type="button" class="ui button Center-options" style="margin-top:15px;" (click)="nothing()">
-    Allow Multiple Choices?
-    <i matTooltip="This feature allows for a user to select multiple choices when they submit their vote." matTooltipPosition="after" style="float: right;" class="info circle icon"></i>
-  </button>
-<br>
-  <div class="ui buttons Center-options" >
-    <button  type="button" class="ui button" (click)="setMultipleChoices(false)">Deny</button>
-    <div class="or"></div>
-    <button   type="button"class="ui positive button" (click)="setMultipleChoices(true)">Allow</button>
-  </div>
-  <br>
-
-       
-<!--  HIDDEN WHILE UNTIL READY FOR IMPLEMENTATION
-
-    <div class="ui toggle checkbox dupip">
-      <div>
-        <input type="checkbox" name="public">
-        <label >Allow Duplicate IP Votes?</label>
+      <div class="ui vertical animated button Center-options" style="display:grid;" (click)="addOption()">
+        <div class="visible content">Add Opt?</div>
+        <div class="hidden content">
+          <i class="plus icon"></i>
+        </div>
       </div>
-    </div>
 
-    <div class="ui toggle checkbox mulch">
-      <div>
-        <input type="checkbox" name="public">
-        <label >Allow Multiple Choices?</label>
+      <br>
+
+      <button  type="button" class="ui button Center-options">
+        IP Duplication Checking?
+        <i matTooltip="This feature guards against a user submitting multiple votes if enabled." matTooltipPosition="after" style="float: right;" class="info circle icon"></i>
+      </button>
+
+      <br>
+
+      <div class="ui buttons Center-options" >
+        <button  type="button" class="ui button" (click)="setSingleIP(false)">Ignore</button>
+        <div class="or"></div>
+        <button  type="button" class="ui positive button" (click)="setSingleIP(true)">Enforce</button>
       </div>
-    </div>
-                
--->    
-<button class="ui right labeled icon button Center-options" style="display:grid;margin-top:15px;" value="Submit" >
-  <i class="right arrow icon"></i>
-  Create Poll
-</button>
 
-</div>
+      <br>
+     
+      <button  type="button" class="ui button Center-options" style="margin-top:15px;" (click)="nothing()">
+        Allow Multiple Choices?
+        <i matTooltip="This feature allows for a user to select multiple choices when they submit their vote." matTooltipPosition="after" style="float: right;" class="info circle icon"></i>
+      </button>
+
+      <br>
+
+      <div class="ui buttons Center-options" >
+        <button  type="button" class="ui button" (click)="setMultipleChoices(false)">Deny</button>
+        <div class="or"></div>
+        <button type="button" class="ui positive button" (click)="setMultipleChoices(true)">Allow</button>
+      </div>
+
+      <br>
+
+      <button class="ui right labeled icon button Center-options" style="display:grid;margin-top:15px;" value="Submit" >
+        <i class="right arrow icon"></i>
+      Create Poll
+      </button>
+
+    </div>
 
     </form>
   </div>
