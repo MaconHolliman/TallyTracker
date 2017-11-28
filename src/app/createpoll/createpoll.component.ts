@@ -19,7 +19,7 @@ export class CreatepollComponent implements OnInit {
   model: any = {};
   val: string;
 
-   questions = 1;
+  questions = 1;
 
   data = [
     { placeholder: 'Option One', name: 'One', modelPropName: 'one', val: ''},
@@ -42,6 +42,7 @@ export class CreatepollComponent implements OnInit {
   setMultipleChoices(x: boolean){
     this.multiple = x;
   }
+
   setSingleIP(x: boolean){
     this.singleIP = x;
   }
