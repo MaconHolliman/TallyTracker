@@ -6,13 +6,13 @@
     <form style="margin: auto; margin-top: 50px;" class="cntr box" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
     
     <mat-form-field class="example-full-width question">
-      <textarea matInput placeholder="Enter your question" name="Question" ngModel="{{question}}"></textarea>
+      <input matInput placeholder="Enter your question" name="Question" ngModel="{{question}}">
     </mat-form-field>
 
     
     <div *ngFor="let d of data">
     <mat-form-field class="example-full-width option">
-      <input matInput placeholder="{{d.placeholder}}" name="{{d.name}}" ngModel="{{d.val}}">
+      <input matInput placeholder="{{d.placeholder}}" name="{{d.name}}" ngModel="{{d.val}}" (focus)="checkIfLast(d.index)" >
     </mat-form-field>
   </div>
 

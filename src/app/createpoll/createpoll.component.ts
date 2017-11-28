@@ -4,6 +4,9 @@ import { NgForm} from '@angular/forms';
 import { NgSemanticModule } from "ng-semantic";
 import { HttpClient } from '@angular/common/http';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { EventEmitter } from '@angular/core';
+import { Output } from '@angular/core';
+
 @Component({
   selector: 'app-createpoll',
   templateUrl: './createpoll.component.html',
@@ -11,6 +14,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 })
 
 export class CreatepollComponent implements OnInit {
+
+ 
+  @Output() send: EventEmitter<any> = new EventEmitter();
+
+  callParent(x: number) {
+    this.send.next(x);
+  }
+
 
   name: string = '';
   results: string;
@@ -22,19 +33,19 @@ export class CreatepollComponent implements OnInit {
    questions = 1;
 
   data = [
-    { placeholder: 'Option One', name: 'One', modelPropName: 'one', val: ''},
-    { placeholder: 'Option Two', name: 'Two', modelPropName: 'two', val: ''}
+    { placeholder: 'Option One', name: 'One', modelPropName: 'one', val: '', index: 1},
+    { placeholder: 'Option Two', name: 'Two', modelPropName: 'two', val: '', index: 2}
   ];
 
   dataFull = [
-    { placeholder: 'Option One', name: 'One', modelPropName: 'one', val: ''},
-    { placeholder: 'Option Two', name: 'Two', modelPropName: 'two', val: ''},
-    { placeholder: 'Option Three', name: 'Three', modelPropName: 'three', val: ''},
-    { placeholder: 'Option Four', name: 'Four', modelPropName: 'four', val: ''},
-    { placeholder: 'Option Five', name: 'Five', modelPropName: 'five', val: ''},
-    { placeholder: 'Option Six', name: 'Six', modelPropName: 'six', val: ''},
-    { placeholder: 'Option Seven', name: 'Seven', modelPropName: 'seven', val: ''},
-    { placeholder: 'Option Eight', name: 'Eight', modelPropName: 'eight', val: ''}
+    { placeholder: 'Option One', name: 'One', modelPropName: 'one', val: '', index: 1},
+    { placeholder: 'Option Two', name: 'Two', modelPropName: 'two', val: '', index: 2},
+    { placeholder: 'Option Three', name: 'Three', modelPropName: 'three', val: '', index: 3},
+    { placeholder: 'Option Four', name: 'Four', modelPropName: 'four', val: '', index: 4},
+    { placeholder: 'Option Five', name: 'Five', modelPropName: 'five', val: '', index: 5},
+    { placeholder: 'Option Six', name: 'Six', modelPropName: 'six', val: '', index: 6},
+    { placeholder: 'Option Seven', name: 'Seven', modelPropName: 'seven', val: '', index: 7},
+    { placeholder: 'Option Eight', name: 'Eight', modelPropName: 'eight', val: '', index: 8}
   ];
 
  
@@ -56,6 +67,14 @@ export class CreatepollComponent implements OnInit {
      this.questions +=1;
      this.data[this.questions] = this.dataFull[this.questions];
     }
+  }
+
+  checkIfLast(index: number)
+  {
+    if(index > this.questions){
+      this.addOption();
+    }
+    
   }
   
 
@@ -106,9 +125,17 @@ export class CreatepollComponent implements OnInit {
     this.pollData.options[7] = f.value.Eight;
     this.pollData.singleIP = this.singleIP;
     this.pollData.multiple = this.multiple;
-    console.log(this.body);
-    console.log(f.valid);  // false
-    console.log(this.pollData);
+    
+    this.pollData.votes[0] = 0;
+    this.pollData.votes[1] = 0;
+    this.pollData.votes[2] = 0;
+    this.pollData.votes[3] = 0;
+    this.pollData.votes[4] = 0;
+    this.pollData.votes[5] = 0;
+    this.pollData.votes[6] = 0;
+    this.pollData.votes[7] = 0;
+    this.postPoll();
+    
   }
   
   getPolls(): void {
@@ -137,10 +164,17 @@ export class CreatepollComponent implements OnInit {
     // Make the HTTP post:
     this.http.post('http://localhost:3000/api/polls', this.body).subscribe(data => {
     // Read the result field from the JSON response.
-    this.results = JSON.stringify(data);
-    console.log(this.results);
+   // this.results = JSON.stringify(data);
+   // console.log(this.results);
     //JSON stringify on the data object to get the entire thing, or specify an index.
     //console.log(JSON.stringify(data[0]));
+    });
+  }
+
+  postPoll(): void {
+    this.http.post('http://localhost:3000/api/polls', this.pollData).subscribe(body => {
+     
+      this.callParent(body.id);
     });
   }
 

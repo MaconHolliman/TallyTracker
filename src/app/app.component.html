@@ -1,10 +1,11 @@
 
 
 <!--The content below is only a placeholder and can be replaced.-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
+
+
 
 <body class="bg">
   
@@ -22,8 +23,10 @@
     </sm-menu>
 
 -->
+
     
-    <app-createpoll></app-createpoll>
+    <app-createpoll *ngIf="createPoll" (send)="toggleToView($event)"></app-createpoll>
+    <app-viewpoll *ngIf="viewPoll" (send)="viewPoll = !viewPoll" [tempID]="id"></app-viewpoll>
 
   </div>
 

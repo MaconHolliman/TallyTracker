@@ -10,11 +10,16 @@
     background-color: #efefef;
 }
 
+test{
+    padding: 100px;
+}
+
+
 .cntr{
     min-width: 150px;
     max-width: 500px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
 }
   
 .example-full-width {
@@ -72,4 +77,12 @@
     max-width: 300px;
     width: 100%;
     margin: 0 auto ;
+}
+
+.boxpoll{
+    background-color: white;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #BBB;
+    margin-top: 50px;
 }

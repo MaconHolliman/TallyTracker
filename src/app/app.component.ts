@@ -11,5 +11,16 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 export class AppComponent {
   title = 'Tally Track';
+
+  createPoll: boolean = true;
+  viewPoll: boolean = false;
+  id: number = 0;
+
+  toggleToView(x: number){
+    //console.log(x);
+    this.id = x;
+    this.createPoll = !this.createPoll;
+    this.viewPoll = !this.viewPoll;
+  }
 }
 
