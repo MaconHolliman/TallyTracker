@@ -1,0 +1,44 @@
+
+
+<div class="cntr boxpoll">
+   
+  
+  <h3 class="ui top attached header">
+        <div>{{tempQuestion}}<div style="float: right;">Poll ID <i class="hashtag icon"></i>  {{tempID}}</div></div>
+      </h3>
+     
+     
+      <div class="ui attached segment">
+         
+       
+
+          
+
+
+
+  
+<div *ngFor="let d of data">
+  
+<h3 class="ui dividing header">
+    <div>{{d.question}}<div style="float: right;"> <i class="square outline icon" (click)="vote(d.question)"></i>  {{d.votes}}</div></div>
+    </h3>
+  
+ 
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
