@@ -58,13 +58,16 @@ export class ViewpollComponent implements OnInit {
     }
   }
 
+  
+  errFix: any;
   getPollById(): void {
-    this.http.get('http://localhost:3000/api/polls/' + this.tempID).subscribe(res => {
+    this.http.get('http://localhost:3000/api/polls/' + this.tempID).subscribe(errfix => {
     // Read the result field from the JSON response.
     //this.results = JSON.stringify(data);
-    //console.log(res);
-    this.tempQuestion = res.question;
-    this.specificPoll = res;
+    //console.log(res);'
+    this.errFix = errfix;
+    this.tempQuestion = this.errFix.question;
+    this.specificPoll = this.errFix;
     this.initPoll();
     //console.log(JSON.stringify(data[0]));
     });

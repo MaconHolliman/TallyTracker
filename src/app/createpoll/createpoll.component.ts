@@ -172,10 +172,14 @@ export class CreatepollComponent implements OnInit {
     });
   }
 
+
+  errFix: any;
+
+
   postPoll(): void {
-    this.http.post('http://localhost:3000/api/polls', this.pollData).subscribe(body => {
-     
-      this.callParent(body.id);
+    this.http.post('http://localhost:3000/api/polls', this.pollData).subscribe(errfix => {
+     this.errFix = errfix;
+      this.callParent(this.errFix.id);
     });
   }
 
